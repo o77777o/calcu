@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Калькулятор</title>
+    <style>
+        html {
+        margin: 1rem;
+        background-color: gray;
+        border: 0.1em solid white;
+        }
+
+        body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: sans-serif;
+        font-size: 2rem;
+        color: white;
+        font-weight: 600;
+        height: 53rem;
+    }
+
+      .calculator {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        max-width: 300px;
+      }
+      .output {
+        grid-column: span 4;
+        text-align: right;
+        padding: 10px;
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+      }
+      .button {
+        padding: 10px;
+        text-align: center;
+        background-color: #ccc;
+        border: none;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #ddd;
+      }
+    </style>
+    <script>
+      function appendToOutput(value) {
+        const output = document.getElementById("output");
+        output.value += value;
+      }
+
+      function calculate() {
+        const output = document.getElementById("output");
+        const result = eval(output.value);
+        output.value = result;
+      }
+
+      function clearOutput() {
+        const output = document.getElementById("output");
+        output.value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" id="output" class="output" />
+
+      <button class="button" onclick="appendToOutput('1')">1</button>
+      <button class="button" onclick="appendToOutput('2')">2</button>
+      <button class="button" onclick="appendToOutput('3')">3</button>
+      <button class="button" onclick="appendToOutput('+')">+</button>
+
+      <button class="button" onclick="appendToOutput('4')">4</button>
+      <button class="button" onclick="appendToOutput('5')">5</button>
+      <button class="button" onclick="appendToOutput('6')">6</button>
+      <button class="button" onclick="appendToOutput('-')">-</button>
+
+      <button class="button" onclick="appendToOutput('7')">7</button>
+      <button class="button" onclick="appendToOutput('8')">8</button>
+      <button class="button" onclick="appendToOutput('9')">9</button>
+      <button class="button" onclick="appendToOutput('*')">*</button>
+
+      <button class="button" onclick="appendToOutput('0')">0</button>
+      <button class="button" onclick="appendToOutput('.')">.</button>
+      <button class="button" onclick="calculate()">=</button>
+      <button class="button" onclick="appendToOutput('/')">/</button>
+
+      <button class="button" onclick="clearOutput()">Clear</button>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
