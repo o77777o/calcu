@@ -44,16 +44,33 @@
       }
 
     </style>
+
     <script>
       function appendToOutput(value) {
-        const output = document.getElementById("output");
-        output.value += value;
+      const output = document.getElementById("output");
+      output.value += value;
       }
 
       function calculate() {
-        const output = document.getElementById("output");
-        const result = eval(output.value);
-        output.value = result;
+      const output = document.getElementById("output");
+      const expression = output.value;
+      const operators = ["+", "-", "*", "/"];
+
+      let result;
+
+      const lastCharIsOperator = operators.some((operator) => output.value.endsWith(operator));
+
+      if (!lastCharIsOperator) {
+        try {
+          result = Function('return (' + expression + ')')();
+        } catch (Error) {
+          result = 'Ошибка';
+        }
+      } else {
+        result = 'Ошибка';
+      }
+
+      output.value = result;
       }
 
       function clearOutput() {
@@ -61,6 +78,7 @@
         output.value = "";
       }
     </script>
+
   </head>
   <body>
     <div class="calculator">
