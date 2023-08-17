@@ -2,85 +2,10 @@
 <html>
   <head>
     <title>Калькулятор</title>
-    <style>
-        html {
-        margin: 1rem;
-        background-color: gray;
-        border: 0.1em solid white;
-        }
-
-        body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: sans-serif;
-        font-size: 2rem;
-        color: white;
-        font-weight: 600;
-        height: 53rem;
-    }
-
-      .calculator {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        max-width: 300px;
-      }
-      .output {
-        grid-column: span 4;
-        text-align: right;
-        padding: 10px;
-        background-color: #f7f7f7;
-        border: 1px solid #ccc;
-      }
-      .button {
-        padding: 10px;
-        text-align: center;
-        background-color: #ccc;
-        border: none;
-        cursor: pointer;
-      }
-
-    </style>
-
-    <script>
-      function appendToOutput(value) {
-      const output = document.getElementById("output");
-      output.value += value;
-      }
-
-      function calculate() {
-      const output = document.getElementById("output");
-      const expression = output.value;
-      const operators = ["+", "-", "*", "/"];
-
-      let result;
-
-      const lastCharIsOperator = operators.some((operator) => output.value.endsWith(operator));
-
-      if (!lastCharIsOperator) {
-        try {
-          result = Function('return (' + expression + ')')();
-        } catch (Error) {
-          result = 'Ошибка';
-        }
-      } else {
-        result = 'Ошибка';
-      }
-
-      output.value = result;
-      }
-
-      function clearOutput() {
-        const output = document.getElementById("output");
-        output.value = "";
-      }
-    </script>
-
   </head>
+  <link rel="stylesheet" href="style.css">
   <body>
+    
     <div class="calculator">
       <input type="text" id="output" class="output" />
 
