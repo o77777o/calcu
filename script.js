@@ -14,7 +14,17 @@ function divide(a, b) {
   return a / b;
 }
 
-a = 17
-b = 34
-
-alert (plus())
+function calculate(a, b, operator) {
+  if (operator === "+") {
+    return plus(a, b);
+  }
+  if (operator === "-") {
+    return minus(a, b);
+  }
+  if (operator === "*") {
+    return multy(a, b);
+  }
+  if (operator === "/") {
+    return divide(a, b);
+  }
+}
