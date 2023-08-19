@@ -32,15 +32,15 @@ function operation(a, b, operator) {
 }
 
 function calculate() {
-  let InputNum1 = document.getElementById("a");
-  let InputOperator = document.getElementById("operator");
-  let InputNum2 = document.getElementById("b");
+  const InputNum1 = document.getElementById("a");
+  const InputOperator = document.getElementById("operator");
+  const InputNum2 = document.getElementById("b");
   //  --------
   const num1 = InputNum1.value;
   const operator = InputOperator.value;
   const num2 = InputNum2.value;
 
-  let OutputResult = document.getElementById("result");
+  const OutputResult = document.getElementById("result");
   const result = operation(+num1, +num2, operator);
   OutputResult.value = result;
 }
