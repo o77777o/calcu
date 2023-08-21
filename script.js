@@ -14,33 +14,45 @@ function divide(a, b) {
   return a / b;
 }
 
-// let operator = ["+", "-", "*", "/"];
-
 function operation(a, b, operator) {
-  if (operator === "+") {
-    return plus(a, b);
-  }
-  if (operator === "-") {
-    return minus(a, b);
-  }
-  if (operator === "*") {
-    return multy(a, b);
-  }
-  if (operator === "/") {
-    return divide(a, b);
+  switch (operator) {
+    case "+":
+      return plus(a, b);
+
+    case "-":
+      return minus(a, b);
+
+    case "*":
+      return multy(a, b);
+
+    case "/":
+      return divide(a, b);
+    default:
+      return "Ошибка";
   }
 }
 
 function calculate() {
-  const InputNum1 = document.getElementById("a");
-  const InputOperator = document.getElementById("operator");
-  const InputNum2 = document.getElementById("b");
-  //  --------
-  const num1 = InputNum1.value;
-  const operator = InputOperator.value;
-  const num2 = InputNum2.value;
+  const InputNum1 = document.querySelector("#a");
+  const InputOperator = document.querySelector("#operator");
+  const InputNum2 = document.querySelector("#b");
 
-  const OutputResult = document.getElementById("result");
-  const result = operation(+num1, +num2, operator);
+  const OutputResult = document.querySelector("#result");
+  const result = operation(
+    +InputNum1.value,
+    +InputNum2.value,
+    InputOperator.value
+  );
   OutputResult.value = result;
 }
+
+// Стилистический калькулятор в айфоне
+// (Если есть желание, добавить анимация как в айфоне, через css)
+// Кнопка стирать однцу цифру, все.
+// ПРИВЯЗАТЬ КЛАВИАТУРУ, чтобы кнопки при нажатии нажимались
+
+/**
+ * много
+ * строчный
+ * коммент
+ */
