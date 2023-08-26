@@ -1,1 +1,18 @@
+html {
+  background-color: gray;
+  color: white;
+}
 
+.grid-container {
+  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 300px;
+}
+
+.grid-item {
+  margin: 0.5px;
+  background-color: #ccc;
+  height: 50px;
+  width: 50px;
+}
