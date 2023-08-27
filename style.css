@@ -51,6 +51,19 @@ body {
   background-color: #595a59;
 }
 
+.num-dfrnt {
+  font-family: sans-serif;
+  color: #e6e6e6;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #393A38;
+}
+
 input {
   padding: 0rem 0.5rem;
   direction: rtl;
