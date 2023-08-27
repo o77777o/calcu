@@ -30,3 +30,7 @@ function ClearAll() {
   const clear = document.querySelector("#entry");
   clear.value = "";
 }
+
+// function ChangeOperator() {
+//   const num = document.querySelector("#entry");
+// }
