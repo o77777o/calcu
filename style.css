@@ -1,18 +1,48 @@
 html {
   background-color: gray;
-  color: white;
+  font-family: sans-serif;
+  color: #e6e6e6;
+  font-weight: 500;
+  font-size: 2rem;
 }
 
-.grid-container {
-  gap: 0;
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  gap: 0.07rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  max-width: 300px;
+  grid-template-columns: repeat(4, 3.5rem);
 }
 
-.grid-item {
-  margin: 0.5px;
-  background-color: #ccc;
-  height: 50px;
-  width: 50px;
+.lastrack {
+  gap: 0.07rem;
+  display: grid;
+  grid-template-columns: 7.07rem 3.5rem 3.5rem;
+}
+
+.operator {
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fea007;
+}
+
+.num {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #595a59;
+}
+
+input {
+  border: none;
+  background-color: #222722;
+  width: 14.08rem;
+  height: 3rem;
 }
