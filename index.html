@@ -7,34 +7,36 @@
 
   <body class="center">
     <div>
-      <input type="text" value="" placeholder="0" />
+      <input type="text" value="" placeholder="0" id="entry" />
       <div class="calculator">
-        <button class="num-dfrnt">AC</button>
+        <button class="num-dfrnt" onclick="ClearAll()">AC</button>
         <button class="num-dfrnt">+/-</button>
         <button class="num-dfrnt">%</button>
         <button class="operator">÷</button>
 
-        <button class="num">7</button>
-        <button class="num">8</button>
-        <button class="num">9</button>
+        <button class="num" onclick="EntersNumber('7')">7</button>
+        <button class="num" onclick="EntersNumber('8')">8</button>
+        <button class="num" onclick="EntersNumber('9')">9</button>
         <button class="operator">×</button>
 
-        <button class="num">4</button>
-        <button class="num">5</button>
-        <button class="num">6</button>
+        <button class="num" onclick="EntersNumber('4')">4</button>
+        <button class="num" onclick="EntersNumber('5')">5</button>
+        <button class="num" onclick="EntersNumber('6')">6</button>
         <button class="operator">—</button>
 
-        <button class="num">1</button>
-        <button class="num">2</button>
-        <button class="num">3</button>
+        <button class="num" onclick="EntersNumber('1')">1</button>
+        <button class="num" onclick="EntersNumber('2')">2</button>
+        <button class="num" onclick="EntersNumber('3')">3</button>
         <button class="operator">+</button>
 
         <div class="lastrack">
-          <button class="num">0</button>
+          <button class="num" onclick="EntersNumber('0')">0</button>
           <button class="num">,</button>
           <button class="operator">=</button>
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
