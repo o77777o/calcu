@@ -1,12 +1,12 @@
 html {
   background-color: gray;
-  font-family: sans-serif;
-  color: #e6e6e6;
-  font-weight: 500;
-  font-size: 2rem;
 }
 
 body {
+  height: 40rem;
+}
+
+.center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,12 @@ body {
 }
 
 .operator {
-  font-size: 1.2em;
+  font-family: sans-serif;
+  color: #e6e6e6;
+  font-weight: 500;
+  font-size: 1.5rem;
+  border: none;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,6 +39,11 @@ body {
 }
 
 .num {
+  font-family: sans-serif;
+  color: #e6e6e6;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
   height: 3rem;
   display: flex;
   align-items: center;
@@ -52,7 +62,7 @@ input {
   font-size: 2rem;
   background-color: #222722;
   width: 13.15rem;
-  height: 3rem;
+  height: 3.7rem;
 }
 ::placeholder {
   color: #e6e6e6;
