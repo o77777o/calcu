@@ -36,7 +36,7 @@ body {
   background: gray;
 }
 
-/* COLORS */
+/* classes of buttons */
 .operators {
   background: #FEA007;
 }
@@ -44,3 +44,4 @@ body {
 .numbers {
   background: #595A59;
 }
+
