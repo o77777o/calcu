@@ -21,7 +21,6 @@ body {
   text-align: end;
 }
 
-
 .buttons4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -40,15 +39,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #393A38;
+  background: #393a38;
 }
 
 /* classes of buttons */
 .operators {
-  background: #FEA007;
+  background: #fea007;
 }
 
 .numbers {
-  background: #595A59;
+  background: #595a59;
 }
-
