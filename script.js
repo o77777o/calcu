@@ -49,16 +49,16 @@ document.querySelector(".buttons").onclick = (event) => {
     switch (operator) {
       case "+":
         a = +a + +b;
-        return;
+        break;
       case "-":
         a = +a - +b;
-        return;
+        break;
       case "X":
         a = +a * +b;
-        return;
+        break;
       case "/":
         a = +a / +b;
-        return;
+        break;
     }
     screen.textContent = a;
     console.log(a, b, operator);
