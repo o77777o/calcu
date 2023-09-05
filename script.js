@@ -21,16 +21,61 @@ function AC() {
 document.querySelector(".ac").onclick = AC;
 
 document.querySelector(".buttons").onclick = (event) => {
-  if (event.target.classList.contains('ac')) return;
+  if (event.target.classList.contains("ac")) return;
   if (!event.target.classList.contains("btn")) return;
 
   screen.textContent = "";
   const key = event.target.textContent;
 
-  if (numbers.includes(key)) {
+  if (numbers.includes(key) && b === "" && operator === "") {
     a += key;
     console.log(a, b, operator);
+    screen.textContent = a;
   }
 
-  screen.textContent = a
+  if (action.includes(key)) {
+    operator = key;
+    console.log(a, b, operator);
+    screen.textContent = operator;
+  }
+
+  if (numbers.includes(key) && a !== "" && operator !== "") {
+    b += key;
+    console.log(a, b, operator);
+    screen.textContent = b;
+  }
+
+  if (key === "=") {
+    switch (operator) {
+      case "+":
+        a = +a + +b;
+        return;
+      case "-":
+        a = +a - +b;
+        return;
+      case "X":
+        a = +a * +b;
+        return;
+      case "/":
+        a = +a / +b;
+        return;
+    }
+    screen.textContent = a;
+    console.log(a, b, operator);
+  }
 };
+
+// function calculate(a, b, operator) {
+//   switch (operator) {
+//     case "+":
+//       return +a + +b;
+//     case "-":
+//       return +a - +b;
+//     case "X":
+//       return +a * +b;
+//     case "/":
+//       return +a / +b;
+//     default:
+//       return undefined;
+//   }
+// }
