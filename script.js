@@ -1,10 +1,9 @@
 let a = ""; //память 1 числа
 let b = ""; //память 2 числа
 let operator = ""; //знак
-let stop = false;
 
 //разделяем цифры от знаков
-const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ","];
+const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
 const action = ["+", "-", "/", "X"];
 //Экран
 const screen = document.querySelector(".screen");
@@ -13,9 +12,8 @@ function AC() {
   a = "";
   b = "";
   operator = "";
-  stop = false;
   screen.textContent = 0;
-  console.log(a, b, operator, stop);
+  console.log(a, b, operator);
 }
 
 document.querySelector(".ac").onclick = AC;
@@ -38,6 +36,33 @@ document.querySelector(".buttons").onclick = (event) => {
     console.log(a, b, operator);
     screen.textContent = operator;
   }
+  
+  if (operator === "-" && a === "" && b === "") {
+    a += key;
+    operator = ""
+    console.log(a, b, operator);
+    screen.textContent = a;
+  }
+
+  if (operator === "+" && a === "-" && b === "") {
+    a = "";
+    operator = ""
+    console.log(a, b, operator);
+    screen.textContent = a;
+  }
+
+  // if (a === "-") {
+  //   a = "";
+  //   screen.textContent = a;
+  // }
+
+  // if (a === "" && b === "" && operator !== "") {
+  //   a += key;
+  //   operator = ""
+  //   console.log(a, b, operator);
+  //   screen.textContent = a;
+  // }
+  
 
   if (numbers.includes(key) && a !== "" && operator !== "") {
     b += key;
@@ -45,37 +70,44 @@ document.querySelector(".buttons").onclick = (event) => {
     screen.textContent = b;
   }
 
+  if (action.includes(key) && b !== "") {
+    b = "";
+  }
+
   if (key === "=") {
+    switch (b) {
+      case "":
+        b = a;
+        break;
+    }
+
     switch (operator) {
       case "+":
         a = +a + +b;
+
         break;
       case "-":
         a = +a - +b;
+
         break;
       case "X":
         a = +a * +b;
+
         break;
       case "/":
         a = +a / +b;
         break;
     }
     screen.textContent = a;
+
+    switch (a) {
+      case Infinity:
+        a = "";
+        b = "";
+        operator = "";
+        screen.textContent = "Ошибка";
+        break;
+    }
     console.log(a, b, operator);
   }
 };
-
-// function calculate(a, b, operator) {
-//   switch (operator) {
-//     case "+":
-//       return +a + +b;
-//     case "-":
-//       return +a - +b;
-//     case "X":
-//       return +a * +b;
-//     case "/":
-//       return +a / +b;
-//     default:
-//       return undefined;
-//   }
-// }
