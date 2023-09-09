@@ -36,17 +36,17 @@ document.querySelector(".buttons").onclick = (event) => {
     console.log(a, b, operator);
     screen.textContent = operator;
   }
-  
+
   if (operator === "-" && a === "" && b === "") {
     a += key;
-    operator = ""
+    operator = "";
     console.log(a, b, operator);
     screen.textContent = a;
   }
 
   if (operator === "+" && a === "-" && b === "") {
     a = "";
-    operator = ""
+    operator = "";
     console.log(a, b, operator);
     screen.textContent = a;
   }
@@ -62,7 +62,6 @@ document.querySelector(".buttons").onclick = (event) => {
   //   console.log(a, b, operator);
   //   screen.textContent = a;
   // }
-  
 
   if (numbers.includes(key) && a !== "" && operator !== "") {
     b += key;
