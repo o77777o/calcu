@@ -3,8 +3,8 @@ let b = ""; //память 2 числа
 let operator = ""; //знак
 
 //разделяем цифры от знаков
-const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
-const action = ["+", "-", "/", "X"];
+const numbers = document.querySelectorAll(".btn")
+const action = document.querySelectorAll(".operators")
 //Экран
 const screen = document.querySelector(".screen");
 
