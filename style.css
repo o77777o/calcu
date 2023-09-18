@@ -23,7 +23,6 @@ body {
   height: 1.5em;
 }
 
-
 .buttons4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -57,12 +56,10 @@ body {
 
 /* classes of buttons */
 .operators {
-
   background: #fea007;
 }
 
 .result {
-
   background: #fea007;
 }
 
