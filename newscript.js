@@ -37,8 +37,45 @@ for (let i = 0; i < numbers.length; i++) {
 
 for (let i = 0; i < action.length; i++) {
   action[i].addEventListener("click", function () {
-    operator = this.innerText;
-    screen.textContent = operator;
-    console.log(a, b, operator);
+    if (a !== "") {
+      operator = this.innerText;
+      screen.textContent = operator;
+      console.log(a, b, operator);
+    }
   });
 }
+
+function result() {
+  switch (operator) {
+    case "+":
+      a = +a + +b;
+      break;
+
+    case "-":
+      a = +a - +b;
+      break;
+
+    case "/":
+      a = +a / +b;
+      break;
+
+    case "X":
+      a = +a * +b;
+      break;
+  }
+  b = "";
+  screen.textContent = a;
+  console.log(a, b, operator);
+
+  switch (a) {
+    case Infinity:
+      a = "";
+      b = "";
+      operator = "";
+      screen.textContent = "Ошибка";
+      console.log("Поле очищено");
+      break;
+  }
+}
+
+document.querySelector(".result").onclick = result;
