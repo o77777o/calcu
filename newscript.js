@@ -7,9 +7,6 @@ const numbers = document.querySelectorAll(".numbers");
 const action = document.querySelectorAll(".operators");
 const screen = document.querySelector(".screen");
 
-console.log(numbers.length);
-console.log(action.length);
-
 function AC() {
   a = "";
   b = "";
