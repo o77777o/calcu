@@ -42,20 +42,17 @@ for (let i = 0; i < action.length; i++) {
   });
 }
 
-function result() {
+let result = () => {
   switch (operator) {
     case "+":
       a = +a + +b;
       break;
-
     case "-":
       a = +a - +b;
       break;
-
     case "/":
       a = +a / +b;
       break;
-
     case "X":
       a = +a * +b;
       break;
@@ -73,6 +70,6 @@ function result() {
       console.log("Поле очищено");
       break;
   }
-}
+};
 
 document.querySelector(".result").onclick = result;
