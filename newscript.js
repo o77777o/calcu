@@ -5,6 +5,7 @@ let operator = ""; //знак
 //разделяем цифры от знаков
 const numbers = document.querySelectorAll(".numbers");
 const action = document.querySelectorAll(".operators");
+//
 const screen = document.querySelector(".screen");
 
 function AC() {
@@ -42,7 +43,26 @@ for (let i = 0; i < action.length; i++) {
   });
 }
 
-let result = () => {
+//
+
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+
+  // Находим кнопку на калькуляторе, соответствующую нажатой клавише
+  const button = Array.from(
+    document.querySelectorAll(".numbers, .operators, .result")
+  ).find((element) => element.textContent === key);
+
+  console.log(button[])
+
+  if (button) {
+    button.click(); // Имитируем клик на кнопку
+  }
+});
+
+//
+
+let calculate = () => {
   switch (operator) {
     case "+":
       a = +a + +b;
@@ -72,4 +92,4 @@ let result = () => {
   }
 };
 
-document.querySelector(".result").onclick = result;
+document.querySelector(".result").onclick = calculate;
