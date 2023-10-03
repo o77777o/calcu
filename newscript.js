@@ -53,7 +53,7 @@ document.addEventListener("keydown", function (event) {
     document.querySelectorAll(".numbers, .operators, .result")
   ).find((element) => element.textContent === key);
 
-  console.log(button[])
+  console.log(button)
 
   if (button) {
     button.click(); // Имитируем клик на кнопку
