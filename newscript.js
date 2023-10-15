@@ -49,11 +49,11 @@ document.addEventListener("keydown", function (event) {
   const key = event.key;
 
   // Находим кнопку на калькуляторе, соответствующую нажатой клавише
-  const button = Array.from(
-    document.querySelectorAll(".numbers, .operators, .result")
-  ).find((element) => element.textContent === key);
+  const button = document
+    .querySelectorAll(".numbers, .operators, .result")
+    .find((element) => element.textContent === key);
 
-  console.log(button)
+  console.log(button);
 
   if (button) {
     button.click(); // Имитируем клик на кнопку
