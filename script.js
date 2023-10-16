@@ -3,8 +3,8 @@ let b = ""; //память 2 числа
 let operator = ""; //знак
 
 //разделяем цифры от знаков
-const numbers = document.querySelectorAll(".btn")
-const action = document.querySelectorAll(".operators")
+const numbers = document.querySelectorAll(".numbers");
+const action = document.querySelectorAll(".operators");
 //Экран
 const screen = document.querySelector(".screen");
 
@@ -15,6 +15,8 @@ function AC() {
   screen.textContent = 0;
   console.log(a, b, operator);
 }
+
+// .lenght почти 
 
 document.querySelector(".ac").onclick = AC;
 
